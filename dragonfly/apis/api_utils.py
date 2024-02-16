@@ -13,26 +13,26 @@
 from argparse import Namespace
 import numpy as np
 # Local imports
-from ..exd.cp_domain_utils import load_config_file, \
+from dragonfly.exd.cp_domain_utils import load_config_file, \
                                 get_processed_func_from_raw_func_for_cp_domain_fidelity, \
                                 get_processed_func_from_raw_func_for_cp_domain
-from ..exd.domains import EuclideanDomain
-from ..exd.worker_manager import MultiProcessingWorkerManager, SyntheticWorkerManager, \
+from dragonfly.exd.domains import EuclideanDomain
+from dragonfly.exd.worker_manager import MultiProcessingWorkerManager, SyntheticWorkerManager, \
                                  AbstractWorkerManager
-from ..opt.ga_optimiser import ga_opt_args
-from ..opt.gp_bandit import get_all_euc_gp_bandit_args, \
+from dragonfly.opt.ga_optimiser import ga_opt_args
+from dragonfly.opt.gp_bandit import get_all_euc_gp_bandit_args, \
                             get_all_cp_gp_bandit_args, get_all_mf_euc_gp_bandit_args, \
                             get_all_mf_cp_gp_bandit_args
-from ..opt.random_optimiser import euclidean_random_optimiser_args, \
+from dragonfly.opt.random_optimiser import euclidean_random_optimiser_args, \
                                    mf_euclidean_random_optimiser_args, \
                                    cp_random_optimiser_args, mf_cp_random_optimiser_args
-from ..opt.multiobjective_gp_bandit import get_all_euc_moo_gp_bandit_args, \
+from dragonfly.opt.multiobjective_gp_bandit import get_all_euc_moo_gp_bandit_args, \
                                            get_all_cp_moo_gp_bandit_args
-from ..opt.random_multiobjective_optimiser import \
+from dragonfly.opt.random_multiobjective_optimiser import \
               euclidean_random_multiobjective_optimiser_args, \
               cp_random_multiobjective_optimiser_args
-from ..utils.general_utils import map_to_bounds
-from ..utils.option_handler import load_options
+from dragonfly.utils.general_utils import map_to_bounds
+from dragonfly.utils.option_handler import load_options
 
 
 def get_worker_manager_from_type(num_workers=1, worker_manager_type='default',
